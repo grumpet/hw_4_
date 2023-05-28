@@ -22,6 +22,16 @@ public class CheckingAccount extends Account implements Loanable{
 		return loanLimit;
 	}
 	
+	
+	public void withDraw(double ammount){
+		if(ammount > this.getMaxWithdraw()) {
+			throw new Error("ammount is bigger than the max withdraw");
+		}
+		else {
+			setBalance(super.getBalance()-ammount);
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return super.toString()+" overdraftLimit "+overdraftLimit+" loanLimit "+loanLimit;
@@ -37,9 +47,9 @@ public class CheckingAccount extends Account implements Loanable{
 		return true;
 	}
 	
-	/*public double getMaxWithdraw(){
-		
-	}*/
+	public double getMaxWithdraw(){
+		return this.getBalance()+overdraftLimit+loanLimit;
+	}
 	
 
 }
