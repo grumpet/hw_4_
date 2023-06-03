@@ -1,7 +1,7 @@
 package hw_4;
 //1
 public abstract class Account  {
-	protected static int accountNumber;
+	protected int accountNumber;
 	protected double balance;
 	public Account(int accountNumber,double balance) {
 		this.balance=balance;
@@ -30,7 +30,7 @@ public abstract class Account  {
 	}
 	@Override
 	public String toString() {
-		return "account number: "+this.accountNumber+"\nbalance "+this.balance;
+		return "\naccount number: "+this.accountNumber+"\nbalance "+this.balance;
 		
 	}
 	//override

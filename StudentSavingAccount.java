@@ -8,7 +8,7 @@ public class StudentSavingAccount extends SavingAccount implements InterestBeari
 		this.encourageRate=encourageRate;
 	}
 	public String toString() {
-		return super.toString()+" encourageRate "+encourageRate;
+		return "\naccount number "+super.accountNumber+"\nbalance"+super.balance+ "\nencoragerate"+this.encourageRate;
 	}
 	 public double computeInterest(int years) {
 		 return super.getBalance()*(INTEREST_RATE+encourageRate)*years;

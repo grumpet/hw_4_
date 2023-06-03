@@ -1,17 +1,20 @@
 package hw_4;
 import java.util.ArrayList;
-public abstract class BankingSystem extends Account implements InterestBearing {
+public class BankingSystem extends Account implements InterestBearing {
 ArrayList<Account> accounts;
+	
+
+	public BankingSystem(){
+	super();
+	this.accounts=new ArrayList<Account>();
+	}
 	
 	public BankingSystem(int accountNumber, double balance) {
 		super(accountNumber, balance);
 		this.accounts=new ArrayList<Account>();
 	}
 	
-	public BankingSystem(){
-		super();
-		this.accounts=new ArrayList<Account>();
-	}
+	
 	
 	// adds account to the array list accounts
 	public void addAccount(Account account){
@@ -20,9 +23,14 @@ ArrayList<Account> accounts;
 	
 	//returns interse from all of the bank accounts 
 	public double computeInteresForAllAccounts(int years){
+		//complete
 		double sum = 0;
 		for(Account a:accounts) {
-			sum+=a.getBalance()*INTEREST_RATE;
+			if(a.getClass()==SavingAccount.class) {
+				sum+=a.getBalance()*INTEREST_RATE*years;
+			}
+			else if(a.getClass()==StudentSavingAccount.class) {
+			}
 		}
 		return sum;	
 	
@@ -48,6 +56,11 @@ ArrayList<Account> accounts;
 		for(Account a:accounts) {
 			System.out.println(a.toString());
 		}
+	}
+
+	@Override
+	public double computeIntres(int years) {
+		return years*INTEREST_RATE;
 	}
 	
 

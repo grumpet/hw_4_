@@ -21,5 +21,9 @@ public class SavingAccount extends Account implements InterestBearing{
 		}
 		
 	}
+	
+	public String toString() {
+		return "\naccount number "+super.accountNumber+"\nbalance"+super.balance;
+	}
 
 }

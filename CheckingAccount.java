@@ -3,7 +3,7 @@ package hw_4;
 public class CheckingAccount extends Account implements Loanable{
 	private double overdraftLimit;
 	private double loanLimit;
-	public CheckingAccount(int accountNumber, double balance) {
+	public CheckingAccount(int accountNumber, double balance,double overdraftLimit,double loanLimit) {
 		super(accountNumber, balance);
 		setOverdraftLimit(overdraftLimit);
 		setLoanLimit(loanLimit);
@@ -34,7 +34,7 @@ public class CheckingAccount extends Account implements Loanable{
 	
 	@Override
 	public String toString() {
-		return super.toString()+" overdraftLimit "+overdraftLimit+" loanLimit "+loanLimit;
+		return "\naccount number "+super.accountNumber+"\nbalance"+super.balance +"\noverdraftLimit "+overdraftLimit+"\nloanLimit "+loanLimit;
 	}
 	
 
