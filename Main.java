@@ -1,3 +1,5 @@
+//Nimrod Katzenell 206776734
+//Gonen Matis 318651411
 package hw_4;
 
 public class Main {
@@ -17,9 +19,10 @@ public class Main {
 			System.out.println("\nmax withdraw "+checking1.getMaxWithdraw()); 
 		}
 		System.out.println("\ninteres "+bank.computeInteresForAllAccounts(2));
+		System.out.println("Intres for all accounts "+bank.computeInteresForAllAccounts(2));
 		System.out.println("\nbalances");
 		for(Account a:bank.accounts) {
-			System.out.println(a.getBalance());
+			System.out.println("bank account number: "+a.getAccountNumber()+" balance: "+a.getBalance());
 		}
 		
 		

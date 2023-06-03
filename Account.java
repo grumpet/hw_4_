@@ -1,5 +1,7 @@
+//Nimrod Katzenell 206776734
+//Gonen Matis 318651411
 package hw_4;
-//1
+
 public abstract class Account  {
 	protected int accountNumber;
 	protected double balance;
@@ -11,11 +13,10 @@ public abstract class Account  {
 	public Account(){
 	}
 	
+	//each account has its own withdraw method
+	public abstract void withDraw(double amount);
 	
-	public void withDraw(double ammount){
-		this.balance-=ammount;
-		
-	}
+	
 	public void deposite(double ammount){
 		this.balance+=ammount;
 	}

@@ -1,19 +1,15 @@
+//Nimrod Katzenell 206776734
+//Gonen Matis 318651411
 package hw_4;
 import java.util.ArrayList;
-public class BankingSystem extends Account implements InterestBearing {
+public class BankingSystem  {
 ArrayList<Account> accounts;
 	
-
+	//empty constructor
 	public BankingSystem(){
-	super();
-	this.accounts=new ArrayList<Account>();
-	}
-	
-	public BankingSystem(int accountNumber, double balance) {
-		super(accountNumber, balance);
 		this.accounts=new ArrayList<Account>();
 	}
-	
+
 	
 	
 	// adds account to the array list accounts
@@ -23,16 +19,14 @@ ArrayList<Account> accounts;
 	
 	//returns interse from all of the bank accounts 
 	public double computeInteresForAllAccounts(int years){
-		//complete
+	
 		double sum = 0;
-		for(Account a:accounts) {
-			if(a.getClass()==SavingAccount.class) {
-				sum+=a.getBalance()*INTEREST_RATE*years;
-			}
-			else if(a.getClass()==StudentSavingAccount.class) {
+		for (Account account : accounts) {
+			if (account instanceof InterestBearing) {
+				sum += ((InterestBearing) account).computeIntres(2);
 			}
 		}
-		return sum;	
+		return sum;
 	
 	}
 	
@@ -48,9 +42,6 @@ ArrayList<Account> accounts;
 		
 	}
 	
-	
-	
-	
 	//prints bank accounts 
 	public void  printAccounts() {
 		for(Account a:accounts) {
@@ -58,10 +49,6 @@ ArrayList<Account> accounts;
 		}
 	}
 
-	@Override
-	public double computeIntres(int years) {
-		return years*INTEREST_RATE;
-	}
 	
 
 }

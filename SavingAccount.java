@@ -1,3 +1,5 @@
+//Nimrod Katzenell 206776734
+//Gonen Matis 318651411
 package hw_4;
 
 public class SavingAccount extends Account implements InterestBearing{
@@ -23,7 +25,7 @@ public class SavingAccount extends Account implements InterestBearing{
 	}
 	
 	public String toString() {
-		return "\naccount number "+super.accountNumber+"\nbalance"+super.balance;
+		return "\naccount number "+super.accountNumber+"\nbalance "+super.balance;
 	}
 
 }

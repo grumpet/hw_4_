@@ -1,3 +1,5 @@
+//Nimrod Katzenell 206776734
+//Gonen Matis 318651411
 package hw_4;
 
 public class CheckingAccount extends Account implements Loanable{
@@ -22,7 +24,7 @@ public class CheckingAccount extends Account implements Loanable{
 		return loanLimit;
 	}
 	
-	
+	@Override
 	public void withDraw(double ammount){
 		if(ammount > this.getMaxWithdraw()) {
 			throw new Error("ammount is bigger than the max withdraw");
